@@ -1,0 +1,20 @@
+.TH ZK 1
+
+.SH NAME
+zk -- enlezLab Markdown Note, a simple note taking tool.
+
+.SH SYNOPSIS
+zk [operation [files]]
+
+.SH DESCRIPTION
+Simple Zettelkasten note taking cli tool use vim as editor
+
+.SH OPTIONS
+
+.B \-n, " new
+
+Create new note. e.g.: zk new 'name of your note'
+
+.B \-l, " list
+
+List all notes
