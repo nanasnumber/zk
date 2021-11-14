@@ -13,12 +13,12 @@ NC='\033[0m' # No Color
 ####[End of Global Vars]####
 
 
-####[Command Params]####
+####[Console Params]####
 
 verb=$1
 noun=$2
 
-####[End of Command Params]####
+####[End of Console Params]####
 
 
 ####[Placeholders]####
