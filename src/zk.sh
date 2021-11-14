@@ -59,8 +59,33 @@ _open () {
 }
 
 _search () {
-  #TODO: logic to search note
-  echo "TODO: logic to search note"
+  echo -e "${CYAN}Search Results:${YELLOW}"
+  results=(`grep -iRl $note_dir_path -e $noun`)
+
+  path=()
+  name=()
+
+  for i in ${results[@]}; do
+    path+=($i)
+  done
+
+  for i in ${results[@]}; do
+    first_line=$(head -n 1 $i)
+    title=${first_line//\# /}
+    slug=${title// /-}
+    name+=($slug)
+  done
+
+  select answer in "${name[@]}"; do
+    count=0
+    for item in "${name[@]}"; do
+      if [[ $item == $answer ]]; then
+        vim --clean ${path[$count]}
+        break 2
+      fi
+      let count++
+    done
+  done
 }
 
 _help () {
